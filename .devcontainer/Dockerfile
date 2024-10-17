@@ -20,5 +20,6 @@ USER developer
 # install Rust (make sure toolchain file matches the nightly version used here)
 RUN curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh -s -- -y --target wasm32-unknown-unknown --default-toolchain nightly-2024-08-02
 ENV PATH=/home/developer/.cargo/bin:$PATH
+RUN curl --proto '=https' --tlsv1.2 -sSf https://raw.githubusercontent.com/cargo-bins/cargo-binstall/main/install-from-binstall-release.sh | bash
 
-RUN cargo install --git https://github.com/rustwasm/wasm-bindgen.git  --tag 0.2.95 wasm-bindgen-cli
+RUN cargo binstall --no-confirm wasm-bindgen-cli@0.2.95
