@@ -35,7 +35,8 @@ subprocess.run([
     "--out-dir",
     "output",
     "--target",
-    "web"
+    "web",
+    "--no-typescript"
 ])
 
 # start web server
